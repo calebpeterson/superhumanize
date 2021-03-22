@@ -17,7 +17,7 @@ static REPLACEMENTS: &'static [&'static [&str]] = &[
 ];
 
 #[wasm_bindgen]
-pub fn superhumanize(s: String) -> String {
+pub fn superhumanize(s: &str) -> String {
     let prepped = String::from(to_title_case(&s));
     let result = REPLACEMENTS
         .iter()
@@ -29,7 +29,7 @@ pub fn superhumanize(s: String) -> String {
 #[cfg(test)]
 mod superhumanize_tests {
     fn super_helper(s: &str) -> String { 
-        return super::superhumanize(String::from(s));
+        return super::superhumanize(s);
     }
 
     #[test]
