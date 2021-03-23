@@ -6,10 +6,14 @@ Make `friendly_machine_produced[labels]` into `Friendly Machine Produced Labels`
 
 `superhumanize` is implemented in Rust as a proof-of-concept to explore whether or not Rust + WASM is production-ready.
 
+## Prerequisites
+
+It is assumed that you have the [`cargo-make` crate](https://github.com/sagiegurari/cargo-make#installation) installed so that `cargo make ...` commands will work.
+
 ## Building
 
 ```
-> wasm-pack build --target nodejs
+> cargo make build
 ```
 
 ## Testing
@@ -17,15 +21,19 @@ Make `friendly_machine_produced[labels]` into `Friendly Machine Produced Labels`
 ### Rust-based Unit Tests
 
 ```
-> cargo test
+> cargo make test
 ```
 
 ### Node.js-based Integration Tests
 
 ```
-# Ensure that the wasm package is built
-> wasm-pack build --target nodejs
+> cargo make npm-test
+```
 
-# Run the integration test suite
-> node tests/integration-tests
+## Publishing
+
+### To NPM
+
+```
+> cargo make npm-publish
 ```

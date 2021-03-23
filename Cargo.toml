@@ -1,6 +1,6 @@
 [package]
 name = "superhumanize"
-version = "0.1.1"
+version = "0.1.4"
 authors = ["Caleb Peterson <caleb.peterson@zapier.com>"]
 edition = "2018"
 
